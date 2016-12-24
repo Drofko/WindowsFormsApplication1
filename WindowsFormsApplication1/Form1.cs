@@ -19,25 +19,26 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
+            listBox.Items.Clear();
 
             Random rnd = new Random();
             int number;
-            int count = 0;
+            int sum = 0;
 
             for (int index = 0; index < 10; index++)
             {
                 number = -100 + rnd.Next(200);
-                listBox1.Items.Add(number);
+                listBox.Items.Add(number);
             }
 
-            for (int index = 1; index < 9; index += 2)
+            for (int index = 0; index < 10; index++)
             {
-                if (((int)listBox1.Items[index] > (int)listBox1.Items[index + 1]) && ((int)listBox1.Items[index] > (int)listBox1.Items[index - 1]))
-                    count++;
+                if ((int)listBox.Items[index] > (int)listBox.Items[1])
+                {
+                    sum += (int)listBox.Items[index];
+                }
             }
-            MessageBox.Show(count.ToString());
+            MessageBox.Show(sum.ToString());
         }
     }
 }
-
