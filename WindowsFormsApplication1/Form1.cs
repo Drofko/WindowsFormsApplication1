@@ -32,7 +32,7 @@ namespace WindowsFormsApplication1
             }
 
             for (int index = 0; index < 10; index++)
-                if ((int)listBox.Items[index] != 0)
+                if ((int)listBox.Items[index] % 3 == 0)
                     count++;
 
             MessageBox.Show(count.ToString());
