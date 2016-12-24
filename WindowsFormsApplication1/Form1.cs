@@ -18,6 +18,7 @@ namespace WindowsFormsApplication1
         }
 
         private void button1_Click(object sender, EventArgs e)
+
         {
             listBox.Items.Clear();
 
@@ -32,13 +33,11 @@ namespace WindowsFormsApplication1
             }
 
             for (int index = 0; index < 10; index++)
-                sum += (int)listBox.Items[index];
+                if ((int)listBox.Items[index] % 3 != 0)
+                    sum += (int)listBox.Items[index];
 
-            if ((int)listBox.Items[1] > sum / 10)
-                MessageBox.Show("Дa");
-            else
-                MessageBox.Show("Нет");
-
+            MessageBox.Show(sum.ToString());
         }
     }
 }
+
