@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1
 
             Random rnd = new Random();
             int number;
-            int count = 0;
+            int sum = 0;
 
             for (int index = 0; index < 10; index++)
             {
@@ -33,12 +33,11 @@ namespace WindowsFormsApplication1
 
             for (int index = 0; index < 10; index++)
             {
-                if ((int)listBox.Items[index] > (int)listBox.Items[4])
-                    count++;
+                if ((int)listBox.Items[index] < 21)
+                    sum += (int)listBox.Items[index];
             }
 
-            MessageBox.Show(count.ToString());
+            MessageBox.Show(sum.ToString());
         }
     }
 }
-
