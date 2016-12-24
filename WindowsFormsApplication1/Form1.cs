@@ -32,13 +32,13 @@ namespace WindowsFormsApplication1
             }
 
             for (int index = 0; index < 10; index++)
-            {
-                if ((int)listBox.Items[index] > (int)listBox.Items[1])
-                {
-                    sum += (int)listBox.Items[index];
-                }
-            }
-            MessageBox.Show(sum.ToString());
+                sum += (int)listBox.Items[index];
+
+            if ((int)listBox.Items[1] > sum / 10)
+                MessageBox.Show("Дa");
+            else
+                MessageBox.Show("Нет");
+
         }
     }
 }
