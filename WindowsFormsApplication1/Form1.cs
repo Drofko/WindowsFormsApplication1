@@ -23,7 +23,6 @@ namespace WindowsFormsApplication1
 
             Random rnd = new Random();
             int number;
-            int count = 0;
 
             for (int index = 0; index < 10; index++)
             {
@@ -31,14 +30,15 @@ namespace WindowsFormsApplication1
                 listBox1.Items.Add(number);
             }
 
-            for (int index = 0; index < 9; index++)
+            for (int index = 0; index < 10; index++)
             {
-                if ((int)listBox1.Items[index] * (int)listBox1.Items[index + 1] < 0)
-                    count++;
+                if ((int)listBox1.Items[index] > 25)
+                {
+                    MessageBox.Show("номер первого элемента, большего 25: " + index);
+                    break;
+                }
             }
-
-            MessageBox.Show(count.ToString());
         }
     }
 }
-
+1
