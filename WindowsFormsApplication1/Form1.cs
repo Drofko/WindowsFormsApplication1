@@ -24,19 +24,19 @@ namespace WindowsFormsApplication1
 
             Random rnd = new Random();
             int number;
-            int count = 0;
+            int sum = 0;
 
             for (int index = 0; index < 10; index++)
             {
-                number = -100 + rnd.Next(200);
+                number = -10 + rnd.Next(20);
                 listBox.Items.Add(number);
             }
 
-            for (int index = 0; index < 9; index++)
-                if (((int)listBox.Items[index] < (int)listBox.Items[1]) && ((int)listBox.Items[index] > (int)listBox.Items[9]))
-                    count++;
+            for (int index = 0; index < 10; index++)
+                if ((int)listBox.Items[index] < (int)listBox.Items[5])
+                    sum += (int)listBox.Items[index];
 
-            MessageBox.Show(count.ToString());
+            MessageBox.Show(sum.ToString());
         }
     }
 }
