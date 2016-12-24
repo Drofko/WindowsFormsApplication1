@@ -19,26 +19,23 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
+            listBox.Items.Clear();
 
             Random rnd = new Random();
             int number;
+            int count = 0;
 
             for (int index = 0; index < 10; index++)
             {
                 number = -100 + rnd.Next(200);
-                listBox1.Items.Add(number);
+                listBox.Items.Add(number);
             }
 
             for (int index = 0; index < 10; index++)
-            {
-                if ((int)listBox1.Items[index] > 25)
-                {
-                    MessageBox.Show("номер первого элемента, большего 25: " + index);
-                    break;
-                }
-            }
+                if ((int)listBox.Items[index] >= 0)
+                    count++;
+
+            MessageBox.Show(count.ToString());
         }
     }
 }
-1
