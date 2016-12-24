@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1
 
             Random rnd = new Random();
             int number;
-            int sum = 0;
+            int count = 0;
 
             for (int index = 0; index < 10; index++)
             {
@@ -32,13 +32,13 @@ namespace WindowsFormsApplication1
             }
 
             for (int index = 0; index < 10; index++)
-                sum += (int)listBox.Items[index];
+            {
+                if ((int)listBox.Items[index] > (int)listBox.Items[4])
+                    count++;
+            }
 
-            if ((int)listBox.Items[1] > sum / 10)
-                MessageBox.Show("Дa");
-            else
-                MessageBox.Show("Нет");
-
+            MessageBox.Show(count.ToString());
         }
     }
 }
+
